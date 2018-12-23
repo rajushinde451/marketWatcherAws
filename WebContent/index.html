@@ -129,7 +129,7 @@ app.controller('myCtrl', function($scope, $http) {
                     'Content-Type': 'application/json'
                 }
             }
-        $http.post('http://localhost:8080/MarketWatcher/rest/MarketService/GetKiteLoginLink', $scope.jsonObj,config)
+        $http.post('http://marketwatdev.c8dywppzdh.ap-northeast-1.elasticbeanstalk.com/rest/MarketService/GetKiteLoginLink', $scope.jsonObj,config)
             .then(function (response) {
 			    console.log(response, 'res');
 			    $scope.PostDataResponse = response.data.url;
@@ -149,11 +149,11 @@ app.controller('myCtrl', function($scope, $http) {
                 }
             }
     	
-    	$http.post('http://localhost:8080/MarketWatcher/rest/MarketService/UpdateCondition', $scope.jsonObjCondition,config)
+    	$http.post('http://marketwatdev.c8dywppzdh.ap-northeast-1.elasticbeanstalk.com/rest/MarketService/UpdateCondition', $scope.jsonObjCondition,config)
     }
     
     $scope.subscribeFunction = function() {
-        $http.get('http://localhost:8080/MarketWatcher/rest/MarketService/Subscribe')
+        $http.get('http://marketwatdev.c8dywppzdh.ap-northeast-1.elasticbeanstalk.com/rest/MarketService/Subscribe')
             .then(function (response) {
 			    console.log(response, 'res');
 			},function (error){
@@ -162,7 +162,7 @@ app.controller('myCtrl', function($scope, $http) {
     }
     
     $scope.getPotentialStocks = function() {
-        $http.get('http://localhost:8080/MarketWatcher/rest/MarketService/GetPotentialStocks')
+        $http.get('http://marketwatdev.c8dywppzdh.ap-northeast-1.elasticbeanstalk.com/rest/MarketService/GetPotentialStocks')
             .then(function (response) {
 			    console.log(response.data, 'res');
 				$scope.Stocks = response.data;
